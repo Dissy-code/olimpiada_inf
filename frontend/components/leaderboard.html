@@ -1,0 +1,31 @@
+<div class="content-panel" id="leaderboardPanel">
+    <div class="panel-header">
+        <h2><i class="fas fa-trophy"></i> Таблица лидеров</h2>
+        <button class="neon-button" onclick="loadLeaderboard()">
+            <i class="fas fa-sync-alt"></i> Обновить
+        </button>
+    </div>
+    <div class="table-container">
+        <div class="leaderboard-table">
+            <table style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th class="rank">Место</th>
+                        <th>Игрок</th>
+                        <th>Рейтинг</th>
+                        <th class="hide-on-mobile">Решено</th>
+                        <th class="hide-on-mobile">Правильно</th>
+                        <th class="hide-on-mobile">Точность</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboardBody">
+                    <tr>
+                        <td colspan="6" style="text-align: center; padding: 50px; color: var(--text-muted);">
+                            Загрузка таблицы лидеров...
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

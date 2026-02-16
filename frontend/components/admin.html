@@ -1,0 +1,35 @@
+<div class="content-panel" id="adminPanel">
+    <div class="panel-header">
+        <h2><i class="fas fa-crown"></i> Административная панель</h2>
+    </div>
+    <div class="admin-grid">
+        <div class="admin-section">
+            <h3><i class="fas fa-users-cog"></i> Управление пользователями</h3>
+            <div style="margin-bottom: 20px;">
+                <button class="neon-button purple" onclick="showAddUserModal()" style="width: 100%;">
+                    <i class="fas fa-user-plus"></i> Добавить пользователя
+                </button>
+            </div>
+            <div class="user-list" id="userList"></div>
+        </div>
+        <div class="admin-section">
+            <h3><i class="fas fa-tasks"></i> Управление задачами</h3>
+            <div style="margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px;">
+                <button class="neon-button" onclick="showAddProblemModal()" style="width: 100%;">
+                    <i class="fas fa-plus-circle"></i> Добавить задачу
+                </button>
+                <button class="neon-button green" onclick="exportProblems()" style="width: 100%;">
+                    <i class="fas fa-download"></i> Экспорт задач (JSON)
+                </button>
+                <button class="neon-button purple" onclick="showImportProblemsModal()" style="width: 100%;">
+                    <i class="fas fa-upload"></i> Импорт задач (JSON)
+                </button>
+            </div>
+            <div id="problemsList" style="max-height: 400px; overflow-y: auto;"></div>
+        </div>
+        <div class="admin-section">
+            <h3><i class="fas fa-chart-pie"></i> Статистика платформы</h3>
+            <div id="adminStats"></div>
+        </div>
+    </div>
+</div>

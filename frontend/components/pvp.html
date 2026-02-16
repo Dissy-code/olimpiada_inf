@@ -1,0 +1,27 @@
+<div class="content-panel" id="pvpPanel">
+    <div class="panel-header">
+        <h2><i class="fas fa-gamepad"></i> PvP Матчи</h2>
+        <button class="neon-button purple" onclick="createMatch()">
+            <i class="fas fa-plus"></i> Создать матч
+        </button>
+    </div>
+    <div class="pvp-container">
+        <div>
+            <h3 style="color: var(--primary-color); margin-bottom: 20px;">Активные матчи</h3>
+            <div id="activeMatches" class="match-card">
+                <div id="matchesLoading" style="text-align: center; padding: 30px;">
+                    <div class="pulse" style="color: var(--primary-color);">Загружаем матчи...</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h3 style="color: var(--secondary-color); margin-bottom: 20px;">Текущий матч</h3>
+            <div id="currentMatch" class="match-card">
+                <div style="text-align: center; padding: 50px; color: var(--text-muted);">
+                    <i class="fas fa-gamepad" style="font-size: 3em; margin-bottom: 20px;"></i>
+                    <p>Участвуйте в матче или создайте новый</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

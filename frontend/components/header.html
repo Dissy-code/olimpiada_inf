@@ -1,0 +1,21 @@
+<header class="header">
+    <div class="logo">
+        <i class="fas fa-meteor logo-icon"></i>
+        <h1>Олимпиадная Платформа</h1>
+    </div>
+    <div class="user-panel" id="userPanel" style="display: none;">
+        <button id="darkModeToggle" class="neon-button">
+            <i class="fas fa-moon"></i> Темный режим
+        </button>
+        <div class="user-info" onclick="showPanel('profile')">
+            <div class="user-avatar" id="userAvatar">U</div>
+            <div>
+                <div id="userName"></div>
+                <div class="user-rating">🏆 <span id="userRating">1000</span></div>
+            </div>
+        </div>
+        <button class="neon-button purple" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i> Выйти
+        </button>
+    </div>
+</header>

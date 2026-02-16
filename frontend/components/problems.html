@@ -1,0 +1,29 @@
+<div class="content-panel" id="problemsPanel">
+    <div class="panel-header">
+        <h2><i class="fas fa-tasks"></i> Каталог задач</h2>
+        <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+            <select id="categoryFilter" class="form-input" style="width: 200px;">
+                <option value="">Все категории</option>
+                <option value="Математика">Математика</option>
+                <option value="Алгебра">Алгебра</option>
+                <option value="Геометрия">Геометрия</option>
+                <option value="Логика">Логика</option>
+                <option value="Комбинаторика">Комбинаторика</option>
+            </select>
+            <select id="difficultyFilter" class="form-input" style="width: 200px;">
+                <option value="">Любая сложность</option>
+                <option value="1">Легкие</option>
+                <option value="2">Средние</option>
+                <option value="3">Сложные</option>
+            </select>
+            <button class="neon-button" onclick="loadProblems()">
+                <i class="fas fa-sync-alt"></i> Обновить
+            </button>
+        </div>
+    </div>
+    <div class="problems-grid" id="problemsGrid"></div>
+    <div id="problemsLoading" style="text-align: center; padding: 40px;">
+        <div class="pulse" style="font-size: 3em; color: var(--primary-color);">⚡</div>
+        <p style="color: var(--text-muted); margin-top: 20px;">Загружаем задачи...</p>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="content-panel" id="statsPanel">
+    <div class="panel-header">
+        <h2><i class="fas fa-chart-line"></i> Статистика</h2>
+        <button class="neon-button" onclick="loadStats()">
+            <i class="fas fa-sync-alt"></i> Обновить
+        </button>
+    </div>
+    <div class="stats-grid" id="platformStats">
+        <div class="stat-card float">
+            <div class="stat-icon"><i class="fas fa-users"></i></div>
+            <div class="stat-value" id="totalUsers">0</div>
+            <div class="stat-label">Пользователей</div>
+        </div>
+        <div class="stat-card float" style="animation-delay: 0.2s;">
+            <div class="stat-icon"><i class="fas fa-tasks"></i></div>
+            <div class="stat-value" id="totalProblems">0</div>
+            <div class="stat-label">Задач</div>
+        </div>
+        <div class="stat-card float" style="animation-delay: 0.4s;">
+            <div class="stat-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="stat-value" id="correctSolutions">0</div>
+            <div class="stat-label">Правильных решений</div>
+        </div>
+        <div class="stat-card float" style="animation-delay: 0.6s;">
+            <div class="stat-icon"><i class="fas fa-trophy"></i></div>
+            <div class="stat-value" id="matchesPlayed">0</div>
+            <div class="stat-label">Сыграно матчей</div>
+        </div>
+    </div>
+    <h3 style="color: var(--secondary-color); margin: 30px 0 15px 0;">Ваша статистика</h3>
+    <div id="userStats" class="neon-card">
+        <div style="text-align: center; padding: 30px; color: var(--text-muted);">
+            Статистика загружается...
+        </div>
+    </div>
+</div>

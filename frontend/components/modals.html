@@ -1,0 +1,132 @@
+<div id="modalOverlay" class="modal">
+    <div id="addProblemModal" class="modal-content" style="display: none;">
+        <span class="modal-close-button" onclick="closeModal()">&times;</span>
+        <h2 class="neon-text" style="margin-bottom: 20px;">Добавить задачу</h2>
+        <div class="form-group">
+            <label>Название задачи</label>
+            <input type="text" id="modalProblemTitle" class="form-input" placeholder="Введите название">
+        </div>
+        <div class="form-group">
+            <label>Описание задачи</label>
+            <textarea id="modalProblemDesc" class="form-input" rows="4" placeholder="Опишите задачу"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Правильный ответ</label>
+            <input type="text" id="modalProblemAnswer" class="form-input" placeholder="Введите правильный ответ">
+        </div>
+        <div class="form-group" style="display: flex; gap: 10px;">
+            <div style="flex: 1;">
+                <label>Сложность</label>
+                <select id="modalProblemDifficulty" class="form-input">
+                    <option value="1">Легкая</option>
+                    <option value="2">Средняя</option>
+                    <option value="3">Сложная</option>
+                </select>
+            </div>
+            <div style="flex: 1;">
+                <label>Категория</label>
+                <input type="text" id="modalProblemCategory" class="form-input" placeholder="Математика">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Теги (через запятую)</label>
+            <input type="text" id="modalProblemTags" class="form-input" placeholder="алгебра, уравнения, тест">
+        </div>
+        <div class="modal-buttons">
+            <button class="neon-button" onclick="addProblem()">Добавить</button>
+            <button class="neon-button purple" onclick="closeModal()">Отмена</button>
+        </div>
+    </div>
+
+    <div id="importProblemsModal" class="modal-content" style="display: none;">
+        <span class="modal-close-button" onclick="closeModal()">&times;</span>
+        <h2 class="neon-text" style="margin-bottom: 20px;">Импорт задач из JSON</h2>
+        <div class="form-group">
+            <label>JSON данные</label>
+            <textarea id="importProblemsData" class="form-input" rows="15" placeholder='[{"title": "Задача", "description": "Описание", "answer": "42", "difficulty": 1, "category": "Математика", "tags": "тест"}]'></textarea>
+        </div>
+        <div style="margin-bottom: 20px; padding: 15px; background: rgba(var(--primary-color-rgb), 0.1); border-radius: 8px; border: 1px solid rgba(var(--primary-color-rgb), 0.3);">
+            <p style="color: var(--text-muted); font-size: 0.9em;">
+                <strong>Формат JSON:</strong> Массив объектов с полями: title, description, answer, difficulty (1-3), category, tags
+            </p>
+        </div>
+        <div class="modal-buttons">
+            <button class="neon-button purple" onclick="importProblems()">Импортировать</button>
+            <button class="neon-button" onclick="closeModal()">Отмена</button>
+        </div>
+    </div>
+
+    <div id="addUserModal" class="modal-content" style="display: none;">
+        <span class="modal-close-button" onclick="closeModal()">&times;</span>
+        <h2 class="neon-text" style="margin-bottom: 20px;">Добавить пользователя</h2>
+        <div class="form-group">
+            <label>Имя пользователя</label>
+            <input type="text" id="modalUsername" class="form-input" placeholder="Введите имя пользователя">
+        </div>
+        <div class="form-group">
+            <label>Email (необязательно)</label>
+            <input type="email" id="modalUserEmail" class="form-input" placeholder="Введите email">
+        </div>
+        <div class="form-group">
+            <label>Пароль</label>
+            <input type="password" id="modalUserPassword" class="form-input" placeholder="Введите пароль">
+        </div>
+        <div class="form-group">
+            <label>Роль</label>
+            <select id="modalUserRole" class="form-input">
+                <option value="user">Пользователь</option>
+                <option value="admin">Администратор</option>
+            </select>
+        </div>
+        <div class="modal-buttons">
+            <button class="neon-button purple" onclick="adminAddUser()">Добавить</button>
+            <button class="neon-button" onclick="closeModal()">Отмена</button>
+        </div>
+    </div>
+
+    <div id="editUserModal" class="modal-content" style="display: none;">
+        <span class="modal-close-button" onclick="closeModal()">&times;</span>
+        <h2 class="neon-text" style="margin-bottom: 20px;">Редактировать пользователя</h2>
+        <input type="hidden" id="editUserId">
+        <div class="form-group">
+            <label>Имя пользователя</label>
+            <input type="text" id="editUsername" class="form-input" readonly>
+        </div>
+        <div class="form-group">
+            <label>Рейтинг</label>
+            <input type="number" id="editUserRating" class="form-input">
+        </div>
+        <div class="form-group">
+            <label>Роль</label>
+            <select id="editUserRole" class="form-input">
+                <option value="user">Пользователь</option>
+                <option value="admin">Администратор</option>
+            </select>
+        </div>
+        <div class="modal-buttons">
+            <button class="neon-button" onclick="adminUpdateUser()">Сохранить</button>
+            <button class="neon-button purple" onclick="closeModal()">Отмена</button>
+        </div>
+    </div>
+
+    <div id="editProfileModal" class="modal-content" style="display: none;">
+        <span class="modal-close-button" onclick="closeModal()">&times;</span>
+        <h2 class="neon-text" style="margin-bottom: 20px;">Редактировать профиль</h2>
+        <div class="form-group">
+            <label>Имя пользователя</label>
+            <input type="text" id="editProfileUsername" class="form-input" readonly>
+        </div>
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="editProfileEmail" class="form-input" placeholder="Ваш email">
+        </div>
+        <div class="form-group">
+            <label>Новый пароль (оставьте пустым, чтобы не менять)</label>
+            <input type="password" id="editProfilePassword" class="form-input" placeholder="Новый пароль">
+        </div>
+        <div class="modal-buttons">
+            <button class="neon-button" onclick="updateProfile()">Сохранить</button>
+            <button class="neon-button purple" onclick="closeModal()">Отмена</button>
+        </div>
+    </div>
+</div>
